@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kai Echterhagen – Bewerbung</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --blue:#3478f6;
+    --dark:#111827;
+    --light:#f5f7fb;
+    --text:#2b2b2b;
+    --gray:#6b7280;
+    --line:#dce3ef;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#edf1f7;
+    color:var(--text);
+}
+
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    backdrop-filter:blur(14px);
+    background:rgba(255,255,255,0.85);
+    border-bottom:1px solid rgba(0,0,0,0.04);
+}
+
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+    padding:18px 40px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    color:var(--dark);
+}
+
+.nav-links{
+    display:flex;
+    gap:34px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#444;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 60px 60px;
+}
+
+.hero-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:80px;
+    align-items:center;
+}
+
+.hero-text h1{
+    font-size:82px;
+    line-height:0.95;
+    font-weight:800;
+    color:var(--dark);
+    margin-bottom:30px;
+}
+
+.hero-text h1 span{
+    color:var(--blue);
+}
+
+.hero-text p{
+    font-size:20px;
+    line-height:1.8;
+    color:#555;
+    max-width:700px;
+}
+
+.hero-buttons{
+    margin-top:45px;
+    display:flex;
+    gap:20px;
+}
+
+.btn{
+    padding:16px 28px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(52,120,246,0.25);
+}
+
+.btn-secondary{
+    border:1px solid #d6dce8;
+    color:#222;
+    background:white;
+}
+
+.btn-secondary:hover{
+    background:#f7f9fc;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:420px;
+    border-radius:30px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.12);
+}
+
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+section{
+    padding:120px 60px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.section-title{
+    font-size:50px;
+    font-weight:800;
+    margin-bottom:70px;
+    color:var(--dark);
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:120px;
+    height:5px;
+    background:var(--blue);
+    position:absolute;
+    left:0;
+    bottom:-18px;
+}
+
+/* ========================= */
+/* ABOUT */
+/* ========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.about-card{
+    background:white;
+    padding:45px;
+    border-radius:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.about-card h3{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.about-card p{
+    line-height:1.9;
+    color:#555;
+    font-size:17px;
+}
+
+/* ========================= */
+/* TIMELINE */
+/* ========================= */
+
+.timeline{
+    position:relative;
+    padding-left:40px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:5px;
+    height:100%;
+    background:var(--blue);
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:60px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-48px;
+    top:10px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--blue);
+}
+
+.date{
+    font-size:14px;
+    font-weight:700;
+    color:var(--blue);
+    margin-bottom:10px;
+}
+
+.job{
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.company{
+    font-size:22px;
+    color:#444;
+    margin-bottom:18px;
+}
+
+.desc{
+    font-size:17px;
+    line-height:1.8;
+    color:#555;
+}
+
+/* ========================= */
+/* SKILLS */
+/* ========================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.skill-card{
+    background:white;
+    padding:35px;
+    border-radius:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.04);
+}
+
+.skill-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.bar{
+    width:100%;
+    height:14px;
+    background:#e5e7eb;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    background:linear-gradient(90deg,#3478f6,#6aa1ff);
+}
+
+/* ========================= */
+/* CONTACT */
+/* ========================= */
+
+.contact-box{
+    background:linear-gradient(135deg,#111827,#1f2937);
+    padding:70px;
+    border-radius:35px;
+    color:white;
+}
+
+.contact-box h2{
+    font-size:48px;
+    margin-bottom:30px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.contact-item{
+    line-height:1.9;
+    color:#d1d5db;
+}
+
+.contact-item strong{
+    color:white;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:1000px){
+
+    .hero-container,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:150px;
+    }
+
+    .hero-text h1{
+        font-size:58px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    section{
+        padding:90px 30px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero-text h1{
+        font-size:44px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+    .job{
+        font-size:25px;
+    }
+
+    .company{
+        font-size:18px;
+    }
+
+    .contact-box{
+        padding:40px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">
+            Kai Echterhagen
+        </div>
+
+        <div class="nav-links">
+            <a href="#about">Über mich</a>
+            <a href="#experience">Erfahrung</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+
+            <h1>
+                Analytisch.<br>
+                Strategisch.<br>
+                <span>Industrieorientiert.</span>
+            </h1>
+
+            <p>
+                Bewerber im Bereich Industriekaufmann mit hoher Lernbereitschaft,
+                technischem Verständnis und Fokus auf moderne Industrieprozesse,
+                Digitalisierung und strukturierte Problemlösung.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Kontakt</a>
+                <a href="#" class="btn btn-secondary">Lebenslauf PDF</a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="bewerbungsfoto.png" alt="Bewerbungsfoto">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            Über mich
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>Strategisches Denken</h3>
+
+                <p>
+                    Durch intensive Beschäftigung mit Strategie, Analyse und
+                    strukturierten Entscheidungsprozessen entwickle ich Lösungen
+                    analytisch und zielorientiert.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>Industrie & Digitalisierung</h3>
+
+                <p>
+                    Mein Fokus liegt auf modernen kaufmännischen Prozessen,
+                    Digitalisierung, Excel, KI-gestützter Recherche und
+                    effizienter Organisation im industriellen Umfeld.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+            Erfahrung & Bildung
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    2024 – Heute
+                </div>
+
+                <div class="job">
+                    Umschulung Industriekaufmann
+                </div>
+
+                <div class="company">
+                    Berufliche Neuausrichtung
+                </div>
+
+                <div class="desc">
+                    Kaufmännische Prozesse, Materialwirtschaft,
+                    Organisation und moderne Industrieabläufe.
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    2020 – 2024
+                </div>
+
+                <div class="job">
+                    Strategische Analyse
+                </div>
+
+                <div class="company">
+                    Schach & Training
+                </div>
+
+                <div class="desc">
+                    Mustererkennung, strategisches Denken,
+                    Entscheidungslogik und Analyse komplexer Situationen.
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    2016 – 2017
+                </div>
+
+                <div class="job">
+                    Softwareentwicklung
+                </div>
+
+                <div class="company">
+                    Umschulung
+                </div>
+
+                <div class="desc">
+                    VBA, digitale Prozesse, Programmierlogik
+                    und technische Problemlösung.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            Skills
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-title">
+                    Analytisches Denken
+                </div>
+
+                <div class="bar">
+                    <div class="fill" style="width:100%"></div>
+                </div>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-title">
+                    Excel / Office
+                </div>
+
+                <div class="bar">
+                    <div class="fill" style="width:92%"></div>
+                </div>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-title">
+                    KI & Recherche
+                </div>
+
+                <div class="bar">
+                    <div class="fill" style="width:95%"></div>
+                </div>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-title">
+                    VBA
+                </div>
+
+                <div class="bar">
+                    <div class="fill" style="width:65%"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>
+                Kontakt
+            </h2>
+
+            <div class="contact-grid">
+
+                <div class="contact-item">
+                    <strong>Region</strong><br>
+                    Stuttgart / Herrenberg
+                </div>
+
+                <div class="contact-item">
+                    <strong>E-Mail</strong><br>
+                    deine@email.de
+                </div>
+
+                <div class="contact-item">
+                    <strong>Telefon</strong><br>
+                    +49 ...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Kai Echterhagen
+</footer>
+
+</body>
+</html>
